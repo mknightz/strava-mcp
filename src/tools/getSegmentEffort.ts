@@ -92,7 +92,7 @@ export const getSegmentEffortTool = {
             if (errorMessage.startsWith("SUBSCRIPTION_REQUIRED:")) {
                 userFriendlyMessage = `🔒 Accessing this segment effort (ID: ${effortId}) requires a Strava subscription. Please check your subscription status.`;
             } else if (errorMessage.includes("Record Not Found") || errorMessage.includes("404")) {
-                userFriendlyMessage = `Segment effort with ID ${effortId} not found.`;
+                userFriendlyMessage = `Segment effort with ID ${effortId} not found. Details: ${errorMessage}`;
             } else {
                 userFriendlyMessage = `An unexpected error occurred while fetching segment effort ${effortId}. Details: ${errorMessage}`;
             }
